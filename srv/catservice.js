@@ -1,5 +1,5 @@
 const {startswith} = require("@cap-js/hana/lib/cql-functions");
-const cds = require("@sap/cds-dk/lib/cds");
+const cds = require("@sap/cds");
 const { randomUUID } = require('crypto');
 
 module.exports = cds.service.impl(async function () {

@@ -21,13 +21,14 @@
     "watch-userdashboard": "cds watch --open userdashboard/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "dependencies": {
-    "@cap-js/hana": "^3.1.2",
+    "@cap-js/hana": "^3",
     "@sap/cds": "^10",
     "@sap/cds-dk": "^10.1.0",
-    "@sap/xssec": "^4.15.0"
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^3",
+    "@sap/cds-dk": "^10",
     "cds-plugin-ui5": "^0.17.0"
   },
   "private": true,
@@ -42,5 +43,13 @@
     "app/vendors",
     "app/maintenance",
     "app/archive"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa",
+        "db": "hana"
+      }
+    }
+  }
 }

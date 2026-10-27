@@ -14,6 +14,18 @@
     {
       "name": "$XSAPPNAME.User",
       "description": "Read own assets with their history and maintenance (My Assets)"
+    },
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Admin"
+    },
+    {
+      "name": "$XSAPPNAME.Manager",
+      "description": "Manager"
+    },
+    {
+      "name": "$XSAPPNAME.User",
+      "description": "User"
     }
   ],
   "attributes": [],
@@ -21,19 +33,25 @@
     {
       "name": "Admin",
       "description": "Asset administrator",
-      "scope-references": ["$XSAPPNAME.Admin"],
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ],
       "attribute-references": []
     },
     {
       "name": "Manager",
       "description": "Asset manager (read-only)",
-      "scope-references": ["$XSAPPNAME.Manager"],
+      "scope-references": [
+        "$XSAPPNAME.Manager"
+      ],
       "attribute-references": []
     },
     {
       "name": "User",
       "description": "Employee (own assets only)",
-      "scope-references": ["$XSAPPNAME.User"],
+      "scope-references": [
+        "$XSAPPNAME.User"
+      ],
       "attribute-references": []
     }
   ],
@@ -41,17 +59,23 @@
     {
       "name": "Asset_Lifecycle_Admin",
       "description": "Asset Lifecycle - Administrator",
-      "role-template-references": ["$XSAPPNAME.Admin"]
+      "role-template-references": [
+        "$XSAPPNAME.Admin"
+      ]
     },
     {
       "name": "Asset_Lifecycle_Manager",
       "description": "Asset Lifecycle - Manager",
-      "role-template-references": ["$XSAPPNAME.Manager"]
+      "role-template-references": [
+        "$XSAPPNAME.Manager"
+      ]
     },
     {
       "name": "Asset_Lifecycle_User",
       "description": "Asset Lifecycle - Employee",
-      "role-template-references": ["$XSAPPNAME.User"]
+      "role-template-references": [
+        "$XSAPPNAME.User"
+      ]
     }
   ],
   "oauth2-configuration": {
