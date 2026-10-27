@@ -1,0 +1,63 @@
+{
+  "xsappname": "asset_lifecycle",
+  "tenant-mode": "dedicated",
+  "description": "Asset Lifecycle Manager",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Full CRUD on assets and master data, all lifecycle actions, dashboard and reports"
+    },
+    {
+      "name": "$XSAPPNAME.Manager",
+      "description": "Read assets, assignments, history, maintenance and archive; dashboard and reports"
+    },
+    {
+      "name": "$XSAPPNAME.User",
+      "description": "Read own assets with their history and maintenance (My Assets)"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "Admin",
+      "description": "Asset administrator",
+      "scope-references": ["$XSAPPNAME.Admin"],
+      "attribute-references": []
+    },
+    {
+      "name": "Manager",
+      "description": "Asset manager (read-only)",
+      "scope-references": ["$XSAPPNAME.Manager"],
+      "attribute-references": []
+    },
+    {
+      "name": "User",
+      "description": "Employee (own assets only)",
+      "scope-references": ["$XSAPPNAME.User"],
+      "attribute-references": []
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "Asset_Lifecycle_Admin",
+      "description": "Asset Lifecycle - Administrator",
+      "role-template-references": ["$XSAPPNAME.Admin"]
+    },
+    {
+      "name": "Asset_Lifecycle_Manager",
+      "description": "Asset Lifecycle - Manager",
+      "role-template-references": ["$XSAPPNAME.Manager"]
+    },
+    {
+      "name": "Asset_Lifecycle_User",
+      "description": "Asset Lifecycle - Employee",
+      "role-template-references": ["$XSAPPNAME.User"]
+    }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://*.hana.ondemand.com/**",
+      "https://*.applicationstudio.cloud.sap/**"
+    ]
+  }
+}

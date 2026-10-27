@@ -1,0 +1,4 @@
+maintenance_ID,asset_asset_ID,type,reportedBy_employee_ID,serviceVendor_vendor_ID,reportedDate,completedDate,status,outcome,cost,coveredByWarranty,nextDueDate,description
+b2079844-faa1-5bb9-97b6-61a87eae1de0,fe736199-6bb2-57ea-9458-2bd27a64bcf1,Repair,cb5c1874-9a0c-53db-a9aa-07c2055e0997,a19ec963-fb58-595f-a9b1-b78afebf6000,2026-10-10,,Open,,0,false,,Battery swelling and keyboard fault reported.
+283633ce-4695-5526-bae7-87a92ffec317,c91fca18-e3ad-59b9-9e20-a018c723a41e,Preventive,08221b80-8f3c-52a6-8ea8-376b789e1d10,2aef77e1-0eb6-5b35-8f3c-490731170704,2026-08-04,2026-08-06,Completed,Inspection passed,0,true,2027-02-04,Scheduled preventive service.
+8490e4ba-f0a2-53f9-8cdb-18d9cee9e279,6483a693-2ba6-50f4-b95e-5fadb8321692,Warranty Claim,a3e0506d-cfd2-5925-986f-04340b544929,614fca83-98bd-5452-a986-54ce232db0bf,2026-06-27,2026-07-02,Completed,Panel replaced under warranty,0,true,,Dead pixel cluster on panel.

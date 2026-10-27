@@ -1,0 +1,6 @@
+employee_ID,fullName,email,phone,location,status,department_dept_ID
+08221b80-8f3c-52a6-8ea8-376b789e1d10,Ananya Rao,ananya.rao@company.com,+91 98450 20481,Bengaluru,Active,622479be-9f54-5ad2-b8e7-5d44b10094b3
+fa7c01db-e3cf-5c43-97d3-3f1f452514af,Vikram Mehta,vikram.mehta@company.com,+91 98200 20176,Mumbai,Active,5e67ed25-1b96-59b8-8d38-c2a023ec0024
+cb5c1874-9a0c-53db-a9aa-07c2055e0997,Priya Nair,priya.nair@company.com,+91 98860 20119,Bengaluru,Active,74ffe252-2441-5937-a0eb-f9a13f344e87
+4a60a1aa-048a-5637-a05e-34c9bf413307,Arjun Patel,arjun.patel@company.com,+91 98220 19882,Pune,Inactive,3101f685-2ceb-5e88-bb8a-03737f53fa6c
+a3e0506d-cfd2-5925-986f-04340b544929,John Smith,john.smith@company.com,+91 98450 30001,Bengaluru,Active,62f65c45-46a8-5d4d-8a9a-6bbcacdc71ba
