@@ -20,7 +20,7 @@ export function AttentionPanel({ warrantyExpiring, overdueMaintenance, statusCou
           title="Warranty expires soon"
           description="Assets in use with a warranty ending in the next 30 days"
           count={warrantyExpiring}
-          href={assetsUrl()}
+          href={assetsUrl({ warranty: true })}
           actionLabel="View assets"
           urgent
         />
@@ -38,7 +38,7 @@ export function AttentionPanel({ warrantyExpiring, overdueMaintenance, statusCou
           title="Awaiting assignment"
           description="Assets in stock and ready to be assigned"
           count={mapRemote(statusCounts, (c) => c['In Stock'] ?? 0)}
-          href={assetsUrl('In Stock')}
+          href={assetsUrl({ status: 'In Stock' })}
           actionLabel="View inventory"
         />
       </ul>

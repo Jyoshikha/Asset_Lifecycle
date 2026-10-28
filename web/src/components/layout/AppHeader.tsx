@@ -39,11 +39,6 @@ export function AppHeader() {
         <Icon name="box" size={20} />
         <span>Asset Lifecycle</span>
       </div>
-      <nav aria-label="Breadcrumb" className={styles.crumbs}>
-        <Text tone="muted" size="sm">Home</Text>
-        <Text tone="muted" size="sm">/</Text>
-        <Text size="sm">Admin dashboard</Text>
-      </nav>
       <GlobalSearch />
       <div className={styles.actions}>
         <NotificationButton />

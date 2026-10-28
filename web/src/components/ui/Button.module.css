@@ -6,12 +6,18 @@
   padding: 0 var(--space-4);
   border-radius: var(--radius);
   border: 1px solid var(--color-line);
+  font: inherit;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
 }
 .quiet { background: var(--color-surface); color: var(--color-ink); }
 .quiet:hover { background: var(--color-hover); }
 .primary { background: var(--color-accent); color: var(--color-accent-ink); border-color: var(--color-accent); }
 .primary:hover { filter: brightness(1.08); }
+.danger { background: var(--color-surface); color: var(--color-danger); border-color: var(--color-danger); }
+.danger:hover { background: var(--color-hover); }
+.off { opacity: 0.5; cursor: not-allowed; }
+.off:hover { filter: none; background: inherit; }

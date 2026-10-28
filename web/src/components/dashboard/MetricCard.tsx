@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Icon, type IconName } from '@/components/ui/Icon';
 import { Skeleton } from '@/components/ui/Skeleton';
 import type { Remote } from '@/hooks/useOData';
@@ -15,7 +16,7 @@ type Props = {
 /** A summary figure that is also a shortcut to the matching records. */
 export function MetricCard({ label, icon, value, hint, href }: Props) {
   return (
-    <a href={href} className={styles.card}>
+    <Link href={href} className={styles.card}>
       <span className={styles.icon}>
         <Icon name={icon} size={20} />
       </span>
@@ -30,6 +31,6 @@ export function MetricCard({ label, icon, value, hint, href }: Props) {
         {value.state === 'ready' && <span className={styles.value}>{value.data}</span>}
         <span className={styles.hint}>{value.state === 'error' ? 'Could not load' : hint}</span>
       </span>
-    </a>
+    </Link>
   );
 }

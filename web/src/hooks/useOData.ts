@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export type Remote<T> =
   | { state: 'loading' }
@@ -12,26 +12,38 @@ export function mapRemote<A, B>(remote: Remote<A>, fn: (data: A) => B): Remote<B
   return remote.state === 'ready' ? { state: 'ready', data: fn(remote.data) } : remote;
 }
 
-/** Runs a loader once on mount and again on retry. Failures are reported, never turned into empty data. */
-export function useRemote<T>(load: (signal: AbortSignal) => Promise<T>): { result: Remote<T>; retry: () => void } {
+/**
+ * Runs a loader on mount, when `key` changes, and on retry. Failures are reported, never turned into empty data.
+ * While a newer request is in flight the previous data stays visible and `busy` is true, so lists do not flash.
+ */
+export function useRemote<T>(
+  load: (signal: AbortSignal) => Promise<T>,
+  key = '',
+): { result: Remote<T>; retry: () => void; busy: boolean } {
   const [result, setResult] = useState<Remote<T>>({ state: 'loading' });
+  const [busy, setBusy] = useState(true);
   const [attempt, setAttempt] = useState(0);
+  const loadRef = useRef(load);
+  loadRef.current = load;
 
   useEffect(() => {
     const controller = new AbortController();
-    setResult({ state: 'loading' });
-    load(controller.signal).then(
-      (data) => setResult({ state: 'ready', data }),
+    setBusy(true);
+    loadRef.current(controller.signal).then(
+      (data) => {
+        if (controller.signal.aborted) return;
+        setResult({ state: 'ready', data });
+        setBusy(false);
+      },
       (e: unknown) => {
         if (controller.signal.aborted) return;
         setResult({ state: 'error', message: e instanceof Error ? e.message : 'Request failed' });
+        setBusy(false);
       },
     );
     return () => controller.abort();
-    // `load` is expected to be a module-level function, so it is deliberately not a dependency.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [attempt]);
+  }, [attempt, key]);
 
   const retry = useCallback(() => setAttempt((n) => n + 1), []);
-  return { result, retry };
+  return { result, retry, busy };
 }

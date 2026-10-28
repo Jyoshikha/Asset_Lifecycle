@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Icon, type IconName } from '@/components/ui/Icon';
 import { Skeleton } from '@/components/ui/Skeleton';
 import type { Remote } from '@/hooks/useOData';
@@ -33,10 +34,10 @@ export function AttentionItem({ icon, title, description, count, href, actionLab
           {n ?? '—'}
         </span>
       )}
-      <a href={href} className={styles.action}>
+      <Link href={href} className={styles.action}>
         {actionLabel}
         <Icon name="arrow" size={14} />
-      </a>
+      </Link>
     </li>
   );
 }

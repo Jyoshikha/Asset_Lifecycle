@@ -2,6 +2,7 @@ import { Panel } from '@/components/ui/Panel';
 import { RemoteView } from '@/components/ui/RemoteView';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { Text } from '@/components/ui/Text';
+import Link from 'next/link';
 import type { Remote } from '@/hooks/useOData';
 import { assetsUrl } from '@/lib/nav';
 import { STATUSES, percent, totalOf } from '@/lib/status';
@@ -63,12 +64,12 @@ export function AssetStatusChart({ remote, retry }: Props) {
                   const n = counts[s.key] ?? 0;
                   return (
                     <li key={s.key}>
-                      <a href={assetsUrl(s.key)} className={styles.row}>
+                      <Link href={assetsUrl({ status: s.key })} className={styles.row}>
                         <span className={styles.dot} style={{ background: s.color }} aria-hidden="true" />
                         <span className={styles.name}>{s.label}</span>
                         <span className={styles.count}>{n}</span>
                         <span className={styles.pct}>{percent(n, total)}%</span>
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}

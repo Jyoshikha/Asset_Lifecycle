@@ -14,7 +14,7 @@ export type NavItemConfig = {
 
 export const NAV: NavItemConfig[] = [
   { label: 'Overview', icon: 'overview', href: '/launch-admin', external: false },
-  { label: 'Hardware assets', icon: 'laptop', href: `${UI5}/assets/index.html`, external: true },
+  { label: 'Hardware assets', icon: 'laptop', href: '/assets', external: false },
   { label: 'Employees', icon: 'user', href: `${UI5}/employees/index.html`, external: true },
   { label: 'Departments', icon: 'org', href: `${UI5}/departments/index.html`, external: true },
   { label: 'Categories', icon: 'grid', href: `${UI5}/categories/index.html`, external: true },
@@ -25,11 +25,13 @@ export const NAV: NavItemConfig[] = [
   { label: 'Settings', icon: 'settings', href: '#', external: false, unavailable: 'Settings are not built yet' },
 ];
 
-/**
- * Where a shortcut lands. The status parameter is passed to the UI5 Assets list as a start-up filter;
- * this has not been verified in the UI5 app, so the migrated Assets page should own filtering.
- */
-export const assetsUrl = (status?: string) =>
-  `${UI5}/assets/index.html${status ? `?status=${encodeURIComponent(status)}` : ''}`;
+/** The assets list, optionally filtered by status or by warranties ending within 30 days. */
+export function assetsUrl(opts: { status?: string; warranty?: boolean } = {}): string {
+  const p = new URLSearchParams();
+  if (opts.status) p.set('status', opts.status);
+  if (opts.warranty) p.set('warranty', '30');
+  const qs = p.toString();
+  return qs ? `/assets?${qs}` : '/assets';
+}
 
 export const maintenanceUrl = `${UI5}/maintenance/index.html`;

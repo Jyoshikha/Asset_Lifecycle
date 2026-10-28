@@ -40,7 +40,7 @@ export function SidebarNavigation() {
       <ul className={styles.list}>
         {NAV.map((item) => (
           <li key={item.label}>
-            <Item item={item} current={!item.external && item.href === pathname} />
+            <Item item={item} current={!item.external && (item.href === pathname || pathname.startsWith(`${item.href}/`))} />
           </li>
         ))}
       </ul>

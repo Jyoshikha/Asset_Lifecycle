@@ -18,10 +18,10 @@ export function KPIGrid({ statusCounts, warrantyExpiring }: Props) {
   return (
     <div className={styles.grid}>
       <MetricCard label="Total assets" icon="box" value={total} hint="All registered assets" href={assetsUrl()} />
-      <MetricCard label="In stock" icon="inventory" value={count('In Stock')} hint={share('In Stock')} href={assetsUrl('In Stock')} />
-      <MetricCard label="Assigned" icon="user" value={count('Assigned')} hint={share('Assigned')} href={assetsUrl('Assigned')} />
-      <MetricCard label="In maintenance" icon="wrench" value={count('Maintenance')} hint="Currently with service" href={assetsUrl('Maintenance')} />
-      <MetricCard label="Warranty expiring" icon="shield" value={warrantyExpiring} hint="Ends within 30 days" href={assetsUrl()} />
+      <MetricCard label="In stock" icon="inventory" value={count('In Stock')} hint={share('In Stock')} href={assetsUrl({ status: 'In Stock' })} />
+      <MetricCard label="Assigned" icon="user" value={count('Assigned')} hint={share('Assigned')} href={assetsUrl({ status: 'Assigned' })} />
+      <MetricCard label="In maintenance" icon="wrench" value={count('Maintenance')} hint="Currently with service" href={assetsUrl({ status: 'Maintenance' })} />
+      <MetricCard label="Warranty expiring" icon="shield" value={warrantyExpiring} hint="Ends within 30 days" href={assetsUrl({ warranty: true })} />
     </div>
   );
 }

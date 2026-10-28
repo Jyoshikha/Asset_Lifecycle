@@ -1,18 +1,17 @@
-import { Heading, Text } from '@/components/ui/Text';
 import { LinkButton } from '@/components/ui/Button';
-import { assetsUrl } from '@/lib/nav';
-import styles from './DashboardToolbar.module.css';
+import { PageHeader } from '@/components/ui/PageHeader';
 
 export function DashboardToolbar() {
   return (
-    <div className={styles.toolbar}>
-      <div className={styles.title}>
-        <Heading level={1}>Asset lifecycle overview</Heading>
-        <Text tone="muted">Monitor inventory, ownership and lifecycle operations.</Text>
-      </div>
-      <LinkButton href={assetsUrl()} variant="primary" icon="plus" external>
-        Register asset
-      </LinkButton>
-    </div>
+    <PageHeader
+      crumbs={[{ label: 'Asset Lifecycle' }, { label: 'Overview' }]}
+      title="Asset lifecycle overview"
+      subtitle="Monitor inventory, ownership and lifecycle operations."
+      actions={
+        <LinkButton href="/assets?new=1" variant="primary" icon="plus">
+          Register asset
+        </LinkButton>
+      }
+    />
   );
 }
