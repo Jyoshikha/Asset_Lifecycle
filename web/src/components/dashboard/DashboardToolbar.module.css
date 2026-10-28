@@ -1,0 +1,2 @@
+.toolbar { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--space-4); flex-wrap: wrap; }
+.title { display: flex; flex-direction: column; gap: 2px; }

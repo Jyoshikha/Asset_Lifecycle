@@ -1,0 +1,67 @@
+/* Design tokens. Components read these variables only; no literal colours elsewhere.
+   White surfaces on a light grey workspace, one muted blue for interaction,
+   red / green / amber reserved for statuses that carry meaning. */
+:root {
+  --color-bg: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-ink: #1c2026;
+  --color-ink-muted: #5c6470;
+  --color-line: #e2e5e9;
+  --color-hover: #f0f2f5;
+
+  --color-accent: #2c5d93;
+  --color-accent-ink: #ffffff;
+  --color-accent-soft: #e8eff7;
+
+  --color-good: #2a7048;
+  --color-warn: #8f5500;
+  --color-danger: #a8312d;
+
+  /* Status chart colours: a text label always accompanies them. */
+  --chart-assigned: #2c5d93;
+  --chart-in-stock: #7b9cc2;
+  --chart-maintenance: #c98a1b;
+  --chart-retired: #8a919b;
+  --chart-archived: #c4c9d0;
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --radius: 6px;
+  --header-h: 56px;
+  --sidebar-w: 232px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f1114;
+    --color-surface: #171a1f;
+    --color-ink: #e8eaed;
+    --color-ink-muted: #9aa1ab;
+    --color-line: #2a2f36;
+    --color-hover: #1e2228;
+
+    --color-accent: #7fa8d8;
+    --color-accent-ink: #0f1114;
+    --color-accent-soft: #1c2735;
+
+    --color-good: #6fc08e;
+    --color-warn: #e0a64a;
+    --color-danger: #e57a76;
+
+    --chart-assigned: #7fa8d8;
+    --chart-in-stock: #4f6f95;
+    --chart-maintenance: #d9a03a;
+    --chart-retired: #7c838d;
+    --chart-archived: #454b54;
+  }
+}

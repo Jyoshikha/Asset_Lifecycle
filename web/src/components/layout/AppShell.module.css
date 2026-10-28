@@ -1,0 +1,14 @@
+.shell { min-height: 100vh; display: flex; flex-direction: column; }
+.body { flex: 1; display: grid; grid-template-columns: var(--sidebar-w) minmax(0, 1fr); }
+
+.sidebar {
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-line);
+}
+.main { padding: var(--space-6); min-width: 0; }
+
+@media (max-width: 900px) {
+  .body { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { border-right: 0; border-bottom: 1px solid var(--color-line); }
+  .main { padding: var(--space-4); }
+}

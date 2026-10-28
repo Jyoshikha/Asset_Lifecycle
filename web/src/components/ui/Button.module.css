@@ -1,0 +1,17 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 36px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-line);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+.quiet { background: var(--color-surface); color: var(--color-ink); }
+.quiet:hover { background: var(--color-hover); }
+.primary { background: var(--color-accent); color: var(--color-accent-ink); border-color: var(--color-accent); }
+.primary:hover { filter: brightness(1.08); }
