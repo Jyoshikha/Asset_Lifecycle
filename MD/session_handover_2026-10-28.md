@@ -7,7 +7,7 @@
 - Server started: <http://localhost:4004>, "server v10.1.1 launched".
 - Created `MD/`, `SETUP.md`, `scripts/changelog.mjs`, `CHANGELOG.md`.
 - Reviewed the frontend (code and UX): BUG-007 to BUG-025 in `bugs.md`.
-- Captured 15 screenshots in `snapshots/` (index in `snapshots/README.md`).
+- Captured 15 screenshots in `old ui/` (index in `old ui/README.md`).
 - Committed locally as `InBul1`; not pushed.
 
 ## Not done

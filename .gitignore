@@ -24,3 +24,7 @@ gen/
 .cdsrc-private.json
 *.tar
 *.tar.gz
+
+# Next.js
+.next/
+next-env.d.ts

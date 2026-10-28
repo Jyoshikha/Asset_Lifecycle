@@ -1,6 +1,6 @@
-# Frontend snapshots
+# Old UI snapshots (UI5 frontend, before the redesign)
 
-Captured 2026-10-28 from the local dev server (<http://localhost:4004>, mocked users, demo data from `test/data/`) with headless Chrome, 1440x900 desktop and 390x844 phone. Not committed to any build; these are evidence for the findings in `MD/bugs.md`.
+Captured 2026-10-28 (do not delete; kept as the "before" record) from the local dev server (<http://localhost:4004>, mocked users, demo data from `test/data/`) with headless Chrome, 1440x900 desktop and 390x844 phone. Not committed to any build; these are evidence for the findings in `MD/bugs.md`.
 
 | File | Screen | User | Related findings |
 |---|---|---|---|
