@@ -63,7 +63,7 @@ Asset page | `/assets/<id>` | Built (Build 1002): details, ownership history, ma
 Employees | `/employees` | Built (Build 1003): search, status and department filters, add and edit. Employees are set to Inactive, never deleted, so the ownership history stays intact.
 Departments, categories, vendors, maintenance, archive, manager and user views | | Not migrated yet; the links open the UI5 apps
 
-Reports, Settings and global search are shown disabled until they exist.
+The left navigation collapses to an icon rail (Build 1004); the choice is remembered in the browser. Reports, Settings and global search are shown disabled until they exist.
 
 ## UI5 dashboards
 

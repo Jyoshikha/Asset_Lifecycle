@@ -27,6 +27,7 @@ const PATHS = {
   columns: 'M4 5h16v14H4z M10 5v14 M15 5v14',
   chevron: 'M6 9l6 6 6-6',
   check: 'M5 12l5 5 9-10',
+  sidebar: 'M4 5h16v14H4z M9 5v14',
 } as const;
 
 export type IconName = keyof typeof PATHS;
