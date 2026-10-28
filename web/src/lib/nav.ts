@@ -15,7 +15,7 @@ export type NavItemConfig = {
 export const NAV: NavItemConfig[] = [
   { label: 'Overview', icon: 'overview', href: '/launch-admin', external: false },
   { label: 'Hardware assets', icon: 'laptop', href: '/assets', external: false },
-  { label: 'Employees', icon: 'user', href: `${UI5}/employees/index.html`, external: true },
+  { label: 'Employees', icon: 'user', href: '/employees', external: false },
   { label: 'Departments', icon: 'org', href: `${UI5}/departments/index.html`, external: true },
   { label: 'Categories', icon: 'grid', href: `${UI5}/categories/index.html`, external: true },
   { label: 'Vendors', icon: 'store', href: `${UI5}/vendors/index.html`, external: true },

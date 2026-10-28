@@ -57,8 +57,13 @@ User | Password | Role
 
 Page | Route | State
 ---------|----------|----------
-Admin overview | `/launch-admin` | Built (Build 1000): KPIs, asset status, assets by category, recent activity, needs attention, small 3D preview. Every figure comes from the service. Reports, Settings and search are shown disabled until they exist.
-Hardware assets, other lists, manager and user views | | Not migrated yet; the links open the UI5 apps
+Admin overview | `/launch-admin` | Built (Build 1000): KPIs, asset status, assets by category, recent activity, needs attention, small 3D preview. Every figure comes from the service.
+Hardware assets | `/assets` | Built (Build 1001): filters, server-side sort and paging, Columns and Density, CSV export, Register asset. Filters live in the URL, so dashboard shortcuts open it filtered.
+Asset page | `/assets/<id>` | Built (Build 1002): details, ownership history, maintenance and archive record, Edit, and the lifecycle actions (assign, return, send to maintenance, complete maintenance, retire, archive).
+Employees | `/employees` | Built (Build 1003): search, status and department filters, add and edit. Employees are set to Inactive, never deleted, so the ownership history stays intact.
+Departments, categories, vendors, maintenance, archive, manager and user views | | Not migrated yet; the links open the UI5 apps
+
+Reports, Settings and global search are shown disabled until they exist.
 
 ## UI5 dashboards
 

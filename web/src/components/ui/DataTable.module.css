@@ -1,4 +1,4 @@
-.scroll { overflow-x: auto; }
+.scroll { overflow-x: auto; position: relative; }
 .busy { opacity: 0.6; transition: opacity 0.15s; }
 .empty { padding: var(--space-8) var(--space-4); text-align: center; }
 
