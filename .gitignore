@@ -24,3 +24,13 @@ gen/
 .cdsrc-private.json
 *.tar
 *.tar.gz
+
+# Next.js
+.next/
+next-env.d.ts
+*.tsbuildinfo
+
+# Local working notes, build reports and screenshots (kept out of the repository)
+MD/
+old ui/
+ui upgrade/

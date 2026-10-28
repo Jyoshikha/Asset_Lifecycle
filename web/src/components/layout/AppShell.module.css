@@ -1,0 +1,54 @@
+.shell { min-height: 100vh; display: flex; flex-direction: column; }
+
+.body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  transition: grid-template-columns 0.2s ease;
+}
+.bodyCollapsed { grid-template-columns: var(--sidebar-rail-w) minmax(0, 1fr); }
+
+/* A card that stays in view while the page scrolls, with a curved right edge. */
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-left: 0;
+  border-radius: 0 24px 24px 0;
+}
+
+.toggle {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  margin: var(--space-3) var(--space-3) 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+}
+.toggle:hover { background: var(--color-hover); color: var(--color-ink); }
+.collapsed .toggle { align-self: center; margin-left: 0; margin-right: 0; }
+
+.main { padding: var(--space-6); min-width: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .body { transition: none; }
+}
+
+/* Small screens use a horizontal bar instead, so there is nothing to collapse. */
+@media (max-width: 900px) {
+  .body, .bodyCollapsed { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { position: static; height: auto; border: 0; border-bottom: 1px solid var(--color-line); border-radius: 0; flex-direction: row; overflow: visible; }
+  .toggle { display: none; }
+  .main { padding: var(--space-4); }
+}

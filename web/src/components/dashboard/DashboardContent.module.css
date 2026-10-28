@@ -1,0 +1,21 @@
+.page { display: flex; flex-direction: column; gap: var(--space-5); max-width: 1480px; }
+
+.analytics {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: var(--space-4);
+}
+.operations {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+/* Fewer columns on narrower screens; the main workflow (status, activity, attention) stays first. */
+@media (max-width: 1280px) {
+  .analytics { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .analytics > :last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 1000px) {
+  .analytics, .operations { grid-template-columns: minmax(0, 1fr); }
+}

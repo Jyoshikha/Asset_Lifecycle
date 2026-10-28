@@ -1,0 +1,2 @@
+.tag { font-weight: 600; color: var(--color-ink); text-decoration: none; font-family: var(--font-mono); font-size: 13px; }
+.tag:hover { color: var(--color-accent); text-decoration: underline; }
