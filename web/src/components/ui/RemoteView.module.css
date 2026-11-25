@@ -1,0 +1,12 @@
+.error { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.retry {
+  font: inherit;
+  font-size: 12px;
+  padding: 2px var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-accent);
+  cursor: pointer;
+}
+.retry:hover { background: var(--color-hover); }

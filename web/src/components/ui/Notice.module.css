@@ -1,0 +1,15 @@
+.notice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  font-size: 14px;
+}
+.success { border-color: var(--color-good); color: var(--color-good); }
+.error { border-color: var(--color-danger); color: var(--color-danger); }
+.info { color: var(--color-ink); }
+.dismiss { border: 0; background: transparent; color: inherit; font-size: 18px; line-height: 1; cursor: pointer; }

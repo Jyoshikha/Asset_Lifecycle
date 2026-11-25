@@ -1,0 +1,22 @@
+.tile {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  color: var(--color-ink-muted);
+}
+.tabs { display: flex; gap: var(--space-5); overflow-x: auto; border-bottom: 1px solid var(--color-line); }
+.tab {
+  padding: var(--space-3) 0;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tab:hover { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+.inline { display: inline-flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.link { border: 0; background: transparent; padding: 0; color: var(--color-accent); font: inherit; cursor: pointer; text-decoration: underline; }
